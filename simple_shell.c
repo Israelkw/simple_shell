@@ -11,6 +11,7 @@
 void eval(char *cmdline);
 int parseline(char *buf, char **argv);
 int builtin_command(char **argv);
+extern char **environ;
 
 /**
  * main - main function of the shell
@@ -104,7 +105,7 @@ int parseline(char *buf, char **argv)
 	if (bg)
 		argv[--argc] = NULL;
 
-		return (bg);
+	return (bg);
 }
 
 /**
